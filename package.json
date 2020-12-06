@@ -1,0 +1,29 @@
+{
+  "name": "gyarb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "lint": "eslint server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FabianAronsson/GYARB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FabianAronsson/GYARB/issues"
+  },
+  "homepage": "https://github.com/FabianAronsson/GYARB#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "nodemon": "^2.0.6"
+  }
+}
