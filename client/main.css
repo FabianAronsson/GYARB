@@ -1,76 +1,95 @@
 /*NAV*/
-nav{
-    background: linear-gradient(to right,#00b7ff, #096cad);
+nav {
+    background: linear-gradient(to right, #00b7ff, #096cad);
     font-size: 1vw;
 }
 
 nav a {
     color: #fff;
 }
-.nav-item{
+
+.nav-item {
     padding-left: 1vw;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     background-color: #07479b;
-    transition: all .5s ease
 }
 
-.dropdown-menu a{
-    color:#fff;
+.dropdown-menu a {
+    color: #fff;
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
     background-color: #07509b;
     color: #fff;
 }
 
-@media only screen and (max-width: 992px){
-    nav{
-        font-size: 2vw;
+@media only screen and (max-width: 992px) {
+    nav {
+        font-size: 2.7vw;
     }
 }
+
 /*NAV END*/
+
+/*FOOTER*/
+footer {
+    color: #fff;
+}
+
+.footer-links {
+    padding-left: -5vw;
+}
+
+/*FOOTER END*/
 
 /*KEYFRAMES*/
 @keyframes slideIn {
     0% {
-      transform: translateY(1rem);
-      opacity: 0;
+        transform: translateY(1rem);
+        opacity: 0;
     }
+
     100% {
-      transform:translateY(0rem);
-      opacity: 1;
+        transform: translateY(0rem);
+        opacity: 1;
     }
+
     0% {
-      transform: translateY(1rem);
-      opacity: 0;
+        transform: translateY(1rem);
+        opacity: 0;
     }
 }
-    @-webkit-keyframes slideIn {
-        0% {
-          -webkit-transform: transform;
-          -webkit-opacity: 0;
-        }
-        100% {
-          -webkit-transform: translateY(0);
-          -webkit-opacity: 1;
-        }
-        0% {
-          -webkit-transform: translateY(1rem);
-          -webkit-opacity: 0;
-        }
-  }
- 
 
-  .slide-in {
+@-webkit-keyframes slideIn {
+    0% {
+        -webkit-transform: transform;
+        -webkit-opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        -webkit-opacity: 1;
+    }
+
+    0% {
+        -webkit-transform: translateY(1rem);
+        -webkit-opacity: 0;
+    }
+}
+
+
+.slide-in {
     -webkit-animation-name: slideIn;
     animation-name: slideIn;
-  }
-  .animate {
+}
+
+.animate {
     animation-duration: 0.3s;
     -webkit-animation-duration: 0.3s;
     animation-fill-mode: both;
     -webkit-animation-fill-mode: both;
-  }
-   /*END KEYFRAMES*/
+}
+
+/*END KEYFRAMES*/

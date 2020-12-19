@@ -9,7 +9,7 @@ const MessageSchema = new mongoose.Schema({
 const Message = mongoose.model('Message', MessageSchema)
 
 exports.newMessage = (name, email, message, timestamp) => {
-    
+
     var message = new Message({
         userName: name,
         email: email,
