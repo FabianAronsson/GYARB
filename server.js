@@ -1,4 +1,5 @@
 const express = require('express')
+const messageModel = require('./messageModel')
 const app = express();
 const port = 8000;
 const clientDir = __dirname + "\\client\\"
@@ -9,7 +10,7 @@ app.use(express.static(clientDir));
 
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html')
+  res.render('pages/index.ejs')
 });
 
 app.post('/', function (req, res) {
