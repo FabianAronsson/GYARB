@@ -13,6 +13,14 @@ app.get('/', (req, res) => {
   res.render('pages/index.ejs')
 });
 
+app.get('/bilInfo', (req, res) => {
+  res.render('pages/bilInfo.ejs')
+});
+
+app.get('/mopedInfo', (req, res) => {
+  res.render('pages/mopedInfo.ejs')
+});
+
 app.post('/', function (req, res) {
   res.send('POST request to the homepage')
 })
