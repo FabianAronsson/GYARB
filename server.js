@@ -29,8 +29,8 @@ app.get('/location', (req, res) => {
   res.render('pages/location.ejs')
 });
 
-app.post('/', function (req, res) {
-  res.send('POST request to the homepage')
+app.post('/form', function (req, res) {
+  res.render('pages/index.ejs')
 })
 
 app.listen(port, () => {
