@@ -13,12 +13,20 @@ app.get('/', (req, res) => {
   res.render('pages/index.ejs')
 });
 
-app.get('/bilInfo', (req, res) => {
-  res.render('pages/bilInfo.ejs')
+app.get('/carInfo', (req, res) => {
+  res.render('pages/carInfo.ejs')
 });
 
 app.get('/mopedInfo', (req, res) => {
   res.render('pages/mopedInfo.ejs')
+});
+
+app.get('/contact', (req, res) => {
+  res.render('pages/contact.ejs')
+});
+
+app.get('/location', (req, res) => {
+  res.render('pages/location.ejs')
 });
 
 app.post('/', function (req, res) {
