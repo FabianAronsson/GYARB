@@ -29,8 +29,11 @@ app.get('/location', (req, res) => {
   res.render('pages/location.ejs')
 });
 
-app.post('/form', function (req, res) {
+app.post('/signup', function (req, res) {
+  //save user in DB
+  res.status(200)
   res.render('pages/index.ejs')
+  console.log('test')
 })
 
 app.listen(port, () => {

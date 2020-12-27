@@ -94,7 +94,7 @@
             </div>
 
 
-            <button type="submit" class="btn btn-primary" onclick="setTimeout(displayModal, 2000);">Skicka!</button>
+            <button type="submit" class="btn btn-primary" id="submit">Skicka!</button>
             <div class="modal fade" id="displayModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -201,9 +201,34 @@
 
   <script>
     $('#signupForm').on('submit',function(e){
+      e.preventDefault();
+      $('#modal').modal('hide');
 
-      $('')
-    }
+      var formData = {
+        firstName: $("#inputName").val(),
+        lastName: $("#inputLName").val(),
+        email: $("#inputEmail").val(),
+        address: $("#inputAddress").val(),
+        number: $("#inputnumber").val(),
+        city: $("#inputCity").val(),
+        zipcode: $("#inpuZip").val()
+      }
+
+      $.ajax({
+        type: "POST",
+        url: 'signup',
+        data: JSON.stringify(formData),
+        dataType: 'json',
+        success: function(){
+          $('#modal').modal('show')
+        },
+        error: function(e){
+          alert('error')
+        }
+      })
+      
+
+    })
 
   </script>
 </html>
