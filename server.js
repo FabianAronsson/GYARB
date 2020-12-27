@@ -1,12 +1,14 @@
 const express = require('express')
 const messageModel = require('./messageModel')
 const personModel = require('./personModel')
-const dBModule = require('./dBModule')
+const dBModule = require('./dBModule');
+const { urlencoded } = require('express');
 const app = express();
 const port = 8000;
 const clientDir = __dirname + "\\client\\"
 
 app.use(express.json());
+app.use(express.urlencoded());
 app.use(express.static(clientDir));
 
 
@@ -31,11 +33,14 @@ app.get('/location', (req, res) => {
   res.render('pages/location.ejs')
 });
 
-app.post('/signup', function (req, res) {
-  //save user in DB
-
+app.post('/', function (req, res) {
+  console.log(req.body.inputName)
+  let person = personModel.createPerson(req.body.inputName, 
+    req.body.inputLName, req.body.inputEmail, 
+    req.body.inputAddress, req.body.inputNumber, 
+    req.body.inputCity, req.body.inputZip)
+  dBModule.store(person)
   res.render('pages/index.ejs')
-  console.log('test')
 })
 
 app.listen(port, () => {

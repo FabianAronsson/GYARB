@@ -14,7 +14,7 @@ const Person = mongoose.model('Person', PersonSchema)
 exports.createPerson = (firstName, lastName, email, address, number, city, zipcode) => {
 
     var person = new Person({
-        fistName: firstName,
+        firstName: firstName,
         lastName: lastName,
         email: email,
         address: address,

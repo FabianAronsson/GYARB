@@ -58,66 +58,66 @@
     <div class="row">
       <div class="col-md-4 mx-auto">
         <div class="container">
-          <form id="signupForm">
+          <form method="POST" action="/">
             <h1>Skicka din anmälan!</h1>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputName">Förnamn</label>
-                <input type="text" class="form-control" id="inputName" placeholder="Förnamn">
+                <input type="text" class="form-control" name="inputName" placeholder="Förnamn">
               </div>
               <div class="form-group col-md-6">
                 <label for="inputLName">Efternamn</label>
-                <input type="text" class="form-control" id="inputLName" placeholder="Efternamn">
+                <input type="text" class="form-control" name="inputLName" placeholder="Efternamn">
               </div>
             </div>
             <div class="form-group">
               <label for="inputEmail">Email</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="förnamn.efternam@email.se">
+              <input type="email" class="form-control" name="inputEmail" placeholder="förnamn.efternam@email.se">
             </div>
             <div class="form-group">
               <label for="inputAddress">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Address">
+              <input type="text" class="form-control" name="inputAddress" placeholder="Address">
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="inputNumber">Telefonnummer</label>
-                <input type="text" class="form-control" id="inputNumber" placeholder="+46123456789">
+                <input type="text" class="form-control" name="inputNumber" placeholder="+46123456789">
               </div>
               <div class="form-group col-md-4">
                 <label for="inputCity">Ort</label>
-                <input type="text" class="form-control" id="inputCity" placeholder="Stenungsund">
+                <input type="text" class="form-control" name="inputCity" placeholder="Stenungsund">
               </div>
               <div class="form-group col-md-2">
                 <label for="inputZip">Postnummer</label>
-                <input type="text" class="form-control" id="inputZip" placeholder="12345">
+                <input type="text" class="form-control" name="inputZip" placeholder="12345">
               </div>
             </div>
-            <button type="submit" class="btn btn-primary" id="submit" data-toggle="modal">Skicka!</button>
-
-            <div class="modal fade" id="modalWindow" tabindex="-1" aria-labelledby="#modalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Tack. Din anmälan är nu skickad.</h5>
-                    <button type="button" class="close" id="closeModal">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <p>Var vänlig vänta ett par dagar så att vi kan behandla din ansökan. Om det skulle vara fullt så återkommer vi via mail.
-                      <br><br>
-                      - Bosses Trafikskola
-                    </p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-secondary" data-dismiss="modal">Stäng</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <button type="submit" class="btn btn-primary" id="submit" data-toggle="modal" onclick="displayModal()">Skicka!</button>
 
 
           </form>
+
+          <div class="modal fade" id="modalWindow" tabindex="-1" aria-labelledby="#modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalLabel">Tack. Din anmälan är nu skickad.</h5>
+                  <button type="button" class="close" id="closeModal">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>Var vänlig vänta ett par dagar så att vi kan behandla din ansökan. Om det skulle vara fullt så återkommer vi via mail.
+                    <br><br>
+                    - Bosses Trafikskola
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success btn-secondary" data-dismiss="modal">Stäng</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -200,30 +200,11 @@
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
   <script>
-    $('#signupForm').on('submit',function(e){
-      e.preventDefault();
+   
+    function displayModal(){
+      $('#modalWindow').modal('show')
+    }
+    
 
-      var formData = {
-        firstName: $("#inputName").val(),
-        lastName: $("#inputLName").val(),
-        email: $("#inputEmail").val(),
-        address: $("#inputAddress").val(),
-        number: $("#inputnumber").val(),
-        city: $("#inputCity").val(),
-        zipcode: $("#inpuZip").val()
-      }
-
-      $.ajax({
-        type: "POST",
-        url: 'signup',
-        data: JSON.stringify(formData),
-        success: function(){
-          $('#modalWindow').modal();
-        },
-        error: function(e){
-          alert('Något gick fel. Försök igen senare.')
-        }
-      })
-    })
   </script>
 </html>
