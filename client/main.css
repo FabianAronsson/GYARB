@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 /*NAV*/
 nav {
     background: linear-gradient(to right, #00b7ff, #096cad);
