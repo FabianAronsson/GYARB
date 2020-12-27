@@ -31,7 +31,6 @@ app.get('/location', (req, res) => {
 
 app.post('/signup', function (req, res) {
   //save user in DB
-  res.status(200)
   res.render('pages/index.ejs')
   console.log('test')
 })
