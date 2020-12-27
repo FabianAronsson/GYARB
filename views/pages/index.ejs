@@ -30,21 +30,21 @@
     <div class="navbar-collapse collapse" id="navbar">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="/">Start</a>
+          <a class="nav-link" id="link" href="/">Start</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true"
+          <a class="nav-link dropdown-toggle" id="link" href="#" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">Priser</a>
-          <div class="dropdown-menu animate slide-in" aria-labelledby="dropdownMenu">
+          <div class="dropdown-menu animate slide-in" id="dropdownHover" aria-labelledby="dropdownMenu">
             <a class="dropdown-item" href="carInfo">Bil</a>
             <a class="dropdown-item" href="mopedInfo">Moped</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact">Kontakta oss</a>
+          <a class="nav-link" id="link" href="contact">Kontakta oss</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="location">Hitta hit</a>
+          <a class="nav-link" id="link" href="location">Hitta hit</a>
         </li>
       </ul>
 
@@ -92,24 +92,25 @@
                 <input type="text" class="form-control" id="inputZip" placeholder="12345">
               </div>
             </div>
+            <button type="submit" class="btn btn-primary" id="submit" data-toggle="modal">Skicka!</button>
 
-
-            <button type="submit" class="btn btn-primary" id="submit">Skicka!</button>
-            <div class="modal fade" id="displayModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal fade" id="modalWindow" tabindex="-1" aria-labelledby="#modalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="modalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="modalLabel">Tack. Din anmälan är nu skickad.</h5>
                     <button type="button" class="close" id="closeModal">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    ...
+                    <p>Var vänlig vänta ett par dagar så att vi kan behandla din ansökan. Om det skulle vara fullt så återkommer vi via mail.
+                      <br><br>
+                      - Bosses Trafikskola
+                    </p>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="closeModal">Close</button>
-                    <button type="button" class="btn btn-primary" id="closeModal">Save changes</button>
+                    <button type="button" class="btn btn-success btn-secondary" data-dismiss="modal">Stäng</button>
                   </div>
                 </div>
               </div>
@@ -201,7 +202,6 @@
   <script>
     $('#signupForm').on('submit',function(e){
       e.preventDefault();
-      $('#modal').modal('hide');
 
       var formData = {
         firstName: $("#inputName").val(),
@@ -218,16 +218,12 @@
         url: 'signup',
         data: JSON.stringify(formData),
         success: function(){
-          $('#displayModal').modal();
+          $('#modalWindow').modal();
         },
         error: function(e){
-          alert('a')
-         
+          alert('Något gick fel. Försök igen senare.')
         }
       })
-
-
     })
-
   </script>
 </html>

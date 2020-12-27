@@ -18,7 +18,10 @@ nav a {
 
 .dropdown-menu {
     background-color: #07479b;
+    color: #fff;
 }
+
+
 
 .dropdown-menu a {
     color: #fff;
@@ -33,8 +36,23 @@ nav a {
     nav {
         font-size: 2.7vw;
     }
+    #link{
+
+    }
 }
 
+@media only screen and (min-width: 993px) {
+    #link{
+        border-radius: 10px;
+        transition: background-color 0.3s ease-in-out;
+    }
+    
+    #link:hover{
+        border-radius: 10px;
+        background-color: #07509b;
+        color: #fff;
+    }
+}
 /*NAV END*/
 
 /*FOOTER*/
