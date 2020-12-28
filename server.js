@@ -15,8 +15,7 @@ app.use(express.static(clientDir));
 
 app.get('/', async (req, res) => {
   var post = await messageModel.getAllMessages({});
-  res.render('pages/index.ejs', {posts: post})
-
+      res.render('pages/index.ejs', {posts: post})
 });
 
 app.get('/carInfo', (req, res) => {
@@ -46,10 +45,12 @@ app.post('/', async function (req, res) {
 });
 
 app.post('/review', async function (req, res) {
-  console.log(req.body.inputUsername)
-  let review = messageModel.newMessage(req.body.inputUsername, req.body.inputReview, req.body.star);
-   dBModule.store(review);
-  console.log('Message saved in database!');
+ 
+    let review = messageModel.newMessage(req.body.inputUsername, req.body.inputReview, req.body.star);
+    dBModule.store(review);
+   console.log('Message saved in database!');
+  
+  
   let post = await messageModel.getAllMessages();
   res.render('pages/index.ejs', {posts: post});
 });

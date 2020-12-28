@@ -21,3 +21,8 @@ exports.getAllMessages = async () => {
     let allMessages = await Message.find({}).sort({date: -1}).limit(6);
     return allMessages;
 }
+
+exports.getOneMessage = async (message) => {
+    let messages = await Message.findOne({message: message});
+    return messages;
+}
