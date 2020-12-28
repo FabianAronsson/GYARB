@@ -34,12 +34,12 @@ app.get('/location', (req, res) => {
 });
 
 app.post('/', function (req, res) {
-  console.log(req.body.inputName)
   let person = personModel.createPerson(req.body.inputName, 
     req.body.inputLName, req.body.inputEmail, 
     req.body.inputAddress, req.body.inputNumber, 
     req.body.inputCity, req.body.inputZip)
   dBModule.store(person)
+  console.log('Person saved in database!')
   res.render('pages/index.ejs')
 })
 
