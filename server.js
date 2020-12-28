@@ -35,19 +35,23 @@ app.get('/location', (req, res) => {
   res.render('pages/location.ejs')
 });
 
-app.post('/', function (req, res) {
+app.post('/', async function (req, res) {
   let person = personModel.createPerson(req.body.inputName, 
     req.body.inputLName, req.body.inputEmail, 
     req.body.inputAddress, req.body.inputNumber, 
     req.body.inputCity, req.body.inputZip)
-  dBModule.store(person)
+  await dBModule.store(person)
   console.log('Person saved in database!')
   res.render('pages/index.ejs')
 });
 
 app.post('/review', async function (req, res) {
-  let post = await messageModel.getAllMessages()
-  res.render('pages/index.ejs', {posts: post})
+  console.log(req.body.inputUsername)
+  let review = messageModel.newMessage(req.body.inputUsername, req.body.inputReview, req.body.star);
+   dBModule.store(review);
+  console.log('Message saved in database!');
+  let post = await messageModel.getAllMessages();
+  res.render('pages/index.ejs', {posts: post});
 });
 
 app.listen(port, () => {

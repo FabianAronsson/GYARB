@@ -1,19 +1,20 @@
 const mongoose = require('mongoose')
 const MessageSchema = new mongoose.Schema({
-    name: String,
+    username: String,
     message: String,
-    star: Number,
+    stars: Number,
 })
 
 const Message = mongoose.model('Message', MessageSchema)
 
-exports.newMessage = (name, message, number) => {
+exports.newMessage = (username, message, number) => {
 
     var message = new Message({
-        username: name,
+        username: username,
         message: message,
-        number:number
+        stars:number
     })
+    return message;
 }
 
 exports.getAllMessages = async () => {

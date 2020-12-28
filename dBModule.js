@@ -7,6 +7,6 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(){
 });
 
-exports.store = (element) => {
-    element.save();
+exports.store = async (element) => {
+    await element.save();
 };

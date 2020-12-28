@@ -69,130 +69,138 @@
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
+        
         <section class="pb-5">
+          
           <div class="container">
+            
             <div class="row">
-              <% for( let i = 0; i < posts.length; i++ ) { %>
+              <% for( let i = 0; i < 3; i++ ) { %>
+              
               <div class="col-xs-12 col-sm-6 col-md-4 mb-4">
+
                 <div class="card">
-                  <div class="card-body text-center">
+                  
+                  <div class="card-body text-center flex-row">
+                    
                     <h4 class="card-title"><%= posts[i].username %> </h4>
-                    <p class="card-text"> <%= posts[i].review %> </p>
+                    <p class="card-text"> <%= posts[i].message %> </p>
+                    <div class="stars">
+                      <form>
+                        <% if (posts[i].stars == 5) { %>
+                        <input class="star star-5" id="stars-5" type="radio" name="star" checked />
+                        <label class="star star-5" for="star-5"></label>
+                        <input class="star star-4" id="stars-4" type="radio" name="star" />
+                        <label class="star star-4" for="star-4"></label>
+
+                        <input class="star star-3" id="stars-3" type="radio" name="star" />
+                        <label class="star star-3" for="star-3"></label>
+
+                        <input class="star star-2" id="stars-2" type="radio" name="star" />
+                        <label class="star star-2" for="star-2"></label>
+
+                        <input class="star star-1" id="stars-1" type="radio" name="star" />
+                        <label class="star star-1" for="star-1"></label>
+                        <% } else if (posts[i].stars == 4) { %>
+                        <input class="star star-5" id="stars-5" type="radio" name="star" />
+                        <label class="star star-5" for="star-5"></label>
+                        <input class="star star-4" id="stars-4" type="radio" name="star" checked />
+                        <label class="star star-4" for="star-4"></label>
+
+                        <input class="star star-3" id="stars-3" type="radio" name="star" />
+                        <label class="star star-3" for="star-3"></label>
+
+                        <input class="star star-2" id="stars-2" type="radio" name="star" />
+                        <label class="star star-2" for="star-2"></label>
+
+                        <input class="star star-1" id="stars-1" type="radio" name="star" />
+                        <label class="star star-1" for="star-1"></label>
+                        <% } else if (posts[i].stars == 3) { %>
+                        <input class="star star-5" id="stars-5" type="radio" name="star" />
+                        <label class="star star-5" for="star-5"></label>
+                        <input class="star star-4" id="stars-4" type="radio" name="star" />
+                        <label class="star star-4" for="star-4"></label>
+
+                        <input class="star star-3" id="stars-3" type="radio" name="star" checked />
+                        <label class="star star-3" for="star-3"></label>
+
+                        <input class="star star-2" id="stars-2" type="radio" name="star" />
+                        <label class="star star-2" for="star-2"></label>
+
+                        <input class="star star-1" id="stars-1" type="radio" name="star" />
+                        <label class="star star-1" for="star-1"></label>
+                        <% } else if (posts[i].stars == 2) { %>
+                        <input class="star star-5" id="stars-5" type="radio" name="star" />
+                        <label class="star star-5" for="star-5"></label>
+                        <input class="star star-4" id="stars-4" type="radio" name="star" />
+                        <label class="star star-4" for="star-4"></label>
+
+                        <input class="star star-3" id="stars-3" type="radio" name="star" />
+                        <label class="star star-3" for="star-3"></label>
+
+                        <input class="star star-2" id="stars-2" type="radio" name="star" checked />
+                        <label class="star star-2" for="star-2"></label>
+
+                        <input class="star star-1" id="stars-1" type="radio" name="star" />
+                        <label class="star star-1" for="star-1"></label>
+                        <%} else if (posts[i].stars == 1) { %>
+                        <input class="star star-5" id="stars-5" type="radio" name="star" />
+                        <label class="star star-5" for="star-5"></label>
+                        <input class="star star-4" id="stars-4" type="radio" name="star" />
+                        <label class="star star-4" for="star-4"></label>
+
+                        <input class="star star-3" id="stars-3" type="radio" name="star" />
+                        <label class="star star-3" for="star-3"></label>
+
+                        <input class="star star-2" id="stars-2" type="radio" name="star" />
+                        <label class="star star-2" for="star-2"></label>
+
+                        <input class="star star-1" id="stars-1" type="radio" name="star" checked />
+                        <label class="star star-1" for="star-1"></label>
+                        <% } %>
+                      </form>
+                    </div>
+                    <% } %>
                   </div>
                 </div>
               </div>
-              <div class="stars">
-                <form>
-                  <% if (posts[i].stars  == 5) { %>
-                  <input class="star star-5" id="stars-5" type="radio" name="star" checked />
-                  <label class="star star-5" for="star-5"></label>
-                  <input class="star star-4" id="stars-4" type="radio" name="star" />
-                  <label class="star star-4" for="star-4"></label>
-
-                  <input class="star star-3" id="stars-3" type="radio" name="star" />
-                  <label class="star star-3" for="star-3"></label>
-
-                  <input class="star star-2" id="stars-2" type="radio" name="star" />
-                  <label class="star star-2" for="star-2"></label>
-
-                  <input class="star star-1" id="stars-1" type="radio" name="star" />
-                  <label class="star star-1" for="star-1"></label>
-                  <% } else if (posts[i].stars == 4) { %>
-                  <input class="star star-5" id="stars-5" type="radio" name="star" />
-                  <label class="star star-5" for="star-5"></label>
-                  <input class="star star-4" id="stars-4" type="radio" name="star" checked />
-                  <label class="star star-4" for="star-4"></label>
-
-                  <input class="star star-3" id="stars-3" type="radio" name="star" />
-                  <label class="star star-3" for="star-3"></label>
-
-                  <input class="star star-2" id="stars-2" type="radio" name="star" />
-                  <label class="star star-2" for="star-2"></label>
-
-                  <input class="star star-1" id="stars-1" type="radio" name="star" />
-                  <label class="star star-1" for="star-1"></label>
-                  <% } else if (posts[i].stars == 3) { %>
-                  <input class="star star-5" id="stars-5" type="radio" name="star" />
-                  <label class="star star-5" for="star-5"></label>
-                  <input class="star star-4" id="stars-4" type="radio" name="star" />
-                  <label class="star star-4" for="star-4"></label>
-
-                  <input class="star star-3" id="stars-3" type="radio" name="star" checked />
-                  <label class="star star-3" for="star-3"></label>
-
-                  <input class="star star-2" id="stars-2" type="radio" name="star" />
-                  <label class="star star-2" for="star-2"></label>
-
-                  <input class="star star-1" id="stars-1" type="radio" name="star" />
-                  <label class="star star-1" for="star-1"></label>
-                  <% } else if (posts[i].stars == 2) { %>
-                  <input class="star star-5" id="stars-5" type="radio" name="star" />
-                  <label class="star star-5" for="star-5"></label>
-                  <input class="star star-4" id="stars-4" type="radio" name="star" />
-                  <label class="star star-4" for="star-4"></label>
-
-                  <input class="star star-3" id="stars-3" type="radio" name="star" />
-                  <label class="star star-3" for="star-3"></label>
-
-                  <input class="star star-2" id="stars-2" type="radio" name="star" checked />
-                  <label class="star star-2" for="star-2"></label>
-
-                  <input class="star star-1" id="stars-1" type="radio" name="star" />
-                  <label class="star star-1" for="star-1"></label>
-                  <%} else if (posts[i].stars == 1) { %>
-                  <input class="star star-5" id="stars-5" type="radio" name="star" />
-                  <label class="star star-5" for="star-5"></label>
-                  <input class="star star-4" id="stars-4" type="radio" name="star" />
-                  <label class="star star-4" for="star-4"></label>
-
-                  <input class="star star-3" id="stars-3" type="radio" name="star" />
-                  <label class="star star-3" for="star-3"></label>
-
-                  <input class="star star-2" id="stars-2" type="radio" name="star" />
-                  <label class="star star-2" for="star-2"></label>
-
-                  <input class="star star-1" id="stars-1" type="radio" name="star" checked />
-                  <label class="star star-1" for="star-1"></label>
-                  <% } %>
-                </form>
-              </div>
-              <% } %>
+            
             </div>
           </div>
         </section>
       </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="..." alt="Second slide">
-      </div>
+
     </div>
   </div>
+
+  
 
 
   <form action="/review" method="POST">
     <div class="form-group">
-      <label for="inputEmail">Namn</label>
+      <label for="inputUsername">Namn</label>
       <input type="text" class="form-control" name="inputUsername" placeholder="Namn">
     </div>
     <div class="form-group">
-      <label for="inputAddress">Om</label>
+      <label for="inputReview">Om</label>
       <input type="text" class="form-control" name="inputReview" placeholder="Skriv vad du tyckte!">
     </div>
     <div class="form-group">
       <div class="stars">
 
-        <input class="star star-5" id="star-5" type="radio" name="star" />
+        <input class="star star-5" id="star-5" type="radio" name="star" value="5" />
         <label class="star star-5" for="star-5"></label>
 
-        <input class="star star-4" id="star-4" type="radio" name="star" />
+        <input class="star star-4" id="star-4" type="radio" name="star" value="4" />
         <label class="star star-4" for="star-4"></label>
 
-        <input class="star star-3" id="star-3" type="radio" name="star" />
+        <input class="star star-3" id="star-3" type="radio" name="star" value="3" />
         <label class="star star-3" for="star-3"></label>
 
-        <input class="star star-2" id="star-2" type="radio" name="star" />
+        <input class="star star-2" id="star-2" type="radio" name="star" value="2" />
         <label class="star star-2" for="star-2"></label>
 
-        <input class="star star-1" id="star-1" type="radio" name="star" />
+        <input class="star star-1" id="star-1" type="radio" name="star" value="1" />
         <label class="star star-1" for="star-1"></label>
 
       </div>
