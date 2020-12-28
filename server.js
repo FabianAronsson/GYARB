@@ -13,8 +13,10 @@ app.use(express.static(clientDir));
 
 
 
-app.get('/', (req, res) => {
-  res.render('pages/index.ejs')
+app.get('/', async (req, res) => {
+  var post = await messageModel.getAllMessages({});
+  res.render('pages/index.ejs', {posts: post})
+
 });
 
 app.get('/carInfo', (req, res) => {
@@ -41,7 +43,12 @@ app.post('/', function (req, res) {
   dBModule.store(person)
   console.log('Person saved in database!')
   res.render('pages/index.ejs')
-})
+});
+
+app.post('/review', async function (req, res) {
+  let post = await messageModel.getAllMessages()
+  res.render('pages/index.ejs', {posts: post})
+});
 
 app.listen(port, () => {
   console.log(`${port}!`)
