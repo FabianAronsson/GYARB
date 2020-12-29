@@ -65,8 +65,8 @@
     </div>
   </div>
 
-  <h5 class="section-title h1">Rescensioner</h5>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <h5 class="section-title h1 text-center mb-6">Rescensioner</h5>
+  <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
 
@@ -86,7 +86,7 @@
                     <h4 class="card-title"><%= posts[i].username %> </h4>
                     <p class="card-text"> <%= posts[i].message %> </p>
                     <div class="stars">
-                      <form>
+                      <form >
                         <% if (posts[i].stars == 5) { %>
                         <input class="star star-5" id="stars-5" type="radio" name="star" checked />
                         <label class="star star-5" for="star-5"></label>

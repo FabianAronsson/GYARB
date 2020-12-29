@@ -126,7 +126,9 @@ div.stars {
     display: inline-block;
   }
   
-  input.star { display: none; }
+  input.star {
+       display: none; 
+    }
   
   label.star {
     float: right;
@@ -154,3 +156,25 @@ div.stars {
   label.star:before {
     content: '\2605';
   }
+
+  .card{
+      margin-top: 1rem;
+  }
+
+  @media only screen and (min-width:576px) and (max-width: 992px) {
+    
+    label.star{
+        font-size: 1.5rem;
+    }
+    
+    div.stars{
+        margin-left: -5rem;
+    }
+} 
+
+@media only screen and (min-width:992px) and (max-width: 1200px) {
+    
+    div.stars{
+        margin-left: -1rem;
+    }
+} 
