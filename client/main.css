@@ -251,3 +251,31 @@ div.stars {
 } 
 
 /*INDEX.ejs END*/
+
+/*CONTACT.ejs*/
+
+.jumboColor{
+    background-color: #fff;
+}
+
+.fb-page{
+    float:right;
+    margin-right: 2rem;
+    margin-top: 7rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-links li{
+    padding-bottom: 1rem;
+}
+
+/*CONTACT.ejs MEDIA QUERIES*/
+@media only screen and (max-width:767px) { /*In order to not break the page when using the facebook plugin.*/
+
+    .fb-container{
+        display: none;
+    }
+} 
+
+/*CONTANCT.ejs END*/

@@ -52,6 +52,49 @@
   </nav>
   <!--NAV END-->
 
+  <!--FACEBOOK PLUGIN-->
+  <div class="fb-container">
+    <div class="fb-page" id="fb" data-href="https://www.facebook.com/bossesstenungsund/" data-width="380"
+      data-tabs="timeline" data-hide-cover="false" data-show-facepile="false">
+    </div>
+  </div>
+  <!--FACEBOOK PLUGIN END-->
+
+  <!--CONTACT INFO-->
+  <div class="jumbotron jumboColor">
+    <div class="container">
+      <h4 class="title">Om du har några frågor så är det bara att kontakta oss.</h4>
+      <p><br> Det går bra att ringa, maila och chatta, men varför inte komma in till körskolan?</p>
+      <p>Det går mycket snabbare att svara på frågor i person än via mail.</p>
+    </div>
+    <div class="container mb-5">
+
+      <div class="col-md-5">
+        <h5 class="font-weight-bold text-uppercase mt-4 mb-4">Kontaktsätt</h5>
+        <div class="contact-links">
+          <ul>
+            <li>
+              <a href="mailto:bossesstenungsund@gmail.com ">Mail: bossesstenungsund@gmail.com </a>
+            </li>
+            <li>
+              <a href="tel:0303-240495 ">Telefon: 0303-240495</a>
+            </li>
+            <li>
+              Det går att chatta via våra sociala medier: <a
+                href="https://www.facebook.com/bossesstenungsund/">Facebook</a>
+            </li>
+            <li>
+              <p>Kom in i person och få svar på nolltid!</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p>Vi vill att du som elev ska vara så informerad som möjligt innan du väljer just vår trafikskola. Det är viktigt
+        för oss. <br> Så tveka inte, hör av dig om det är något du funderar på.</p>
+    </div>
+  </div>
+  <!--CONTACT INFO END-->
+
   <!--FOOTER-->
   <footer class="page-footer font-small stylish-color-dark bg-dark pt-4">
     <div class="container text-center text-md-left">
@@ -128,5 +171,16 @@
   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://connect.facebook.net/sv_SE/sdk.js#xfbml=1&amp;version=v2.5"></script>
+
+<script>
+  $(window).resize(function () {
+    if (window.innerWidth < 770) {
+      var fbWindow = document.getElementById("#fb");
+      fbWindow.remove();
+
+    }
+  });
+</script>
 
 </html>
