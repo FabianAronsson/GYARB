@@ -174,18 +174,16 @@
 <script src="https://connect.facebook.net/sv_SE/sdk.js#xfbml=1&amp;version=v2.5"></script>
 
 <script>
-
   $(window).resize(function () {
     try{
       if (window.innerWidth < 770) {
-      var fbWindow = document.getElementById("#fb");
-      fbWindow.remove();
+        var fbWindow = document.getElementById("#fb");
+        fbWindow.remove();
       }
     }catch(e){
-      //Since jquery tries to remove the facebook plugin for every pixel changed below 770px, it will result in "Uncaught TypeError", so
+      //Since JQuery tries to remove the facebook plugin for every pixel changed below 770px, it will result in "Uncaught TypeError", so
       //in order to not clutter the development console a catch block is used. 
     }
   });
 </script>
-
 </html>
