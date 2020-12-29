@@ -122,6 +122,9 @@ footer {
 
 /*END KEYFRAMES*/
 
+
+/*INDEX.ejs*/
+
 /*Finished reviews*/
 div.stars {
     width: 16.875rem;
@@ -159,7 +162,10 @@ div.stars {
     content: '\2605';
   }
 
-  /*Review stars*/
+  /*Review stars*/ 
+  
+  /*Somewhat of a janky solution. Since the orignal stars used the same styling as the ones in the actual form, they had to be changed since clicking on the fake ones trigger the real ones. This means that a copy of the original had to be made, aka, the finished reviews and the review stars are identical, but independent of each other, making them work properly.*/
+
   div.stars2 {
     display: inline-block;
   }
@@ -211,14 +217,6 @@ div.stars {
       font-size: 1.30rem;
   }
 
-  .review{
-      overflow: auto;
-  }
-
-  #review2{
-    height: 10rem;
-  }
-
   /*MEDIA QUERIES INDEX.ejs*/
 
   @media only screen and (min-width:576px) and (max-width: 992px) {
@@ -252,3 +250,4 @@ div.stars {
     }
 } 
 
+/*INDEX.ejs END*/
