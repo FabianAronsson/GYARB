@@ -199,6 +199,12 @@ div.stars {
       margin-top: 1rem;
   }
 
+  .list{
+      font-size: 1.5rem;
+  }
+
+  /*MEDIA QUERIES INDEX.ejs*/
+
   @media only screen and (min-width:576px) and (max-width: 992px) {
     
     label.star{
