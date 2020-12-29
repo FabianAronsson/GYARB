@@ -211,6 +211,14 @@ div.stars {
       font-size: 1.30rem;
   }
 
+  .review{
+      overflow: auto;
+  }
+
+  #review2{
+    height: 10rem;
+  }
+
   /*MEDIA QUERIES INDEX.ejs*/
 
   @media only screen and (min-width:576px) and (max-width: 992px) {
