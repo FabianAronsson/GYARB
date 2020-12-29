@@ -17,7 +17,7 @@ exports.newMessage = (username, message, number) => {
     return message;
 }
 
-exports.getCertainAmountOfMessages = async () => {
+exports.getAllMessages = async () => {
     let allMessages = await Message.find({}).sort({_id: -1});
     return allMessages;
 }

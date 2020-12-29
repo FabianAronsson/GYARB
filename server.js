@@ -14,7 +14,7 @@ app.use(express.static(clientDir));
 
 
 app.get('/', async (req, res) => {
-  var post = await messageModel.getCertainAmountOfMessages({});
+  var post = await messageModel.getAllMessages({});
       res.render('pages/index.ejs', {posts: post})
 });
 
@@ -50,7 +50,7 @@ app.post('/review', async function (req, res) {
   dBModule.store(review);
   console.log('Message saved in database!');
 
-  let post = await messageModel.getCertainAmountOfMessages({});
+  let post = await messageModel.getAllMessages({});
   res.render('pages/index.ejs', {posts: post});
 });
 
