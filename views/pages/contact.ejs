@@ -54,7 +54,7 @@
 
   <!--FACEBOOK PLUGIN-->
   <div class="fb-container">
-    <div class="fb-page" id="fb" data-href="https://www.facebook.com/bossesstenungsund/" data-width="380"
+    <div class="fb-page" id="fb-plugin" data-href="https://www.facebook.com/bossesstenungsund/" data-width="380"
       data-tabs="timeline" data-hide-cover="false" data-show-facepile="false">
     </div>
   </div>
@@ -154,7 +154,7 @@
         <h5 class="mb-1">Anmäl dig redan idag!</h5>
       </li>
       <li class="py-2">
-        <a href="#!" class="btn btn-danger btn-rounded">Klicka här</a>
+        <a href="/#cAction" class="btn btn-danger btn-rounded">Klicka här</a>
       </li>
     </ul>
     <hr>
@@ -177,7 +177,7 @@
   $(window).resize(function () {
     try{
       if (window.innerWidth < 770) {
-        var fbWindow = document.getElementById("#fb");
+        var fbWindow = document.getElementById("#fb-plugin");
         fbWindow.remove();
       }
     }catch(e){
