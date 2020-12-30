@@ -2,7 +2,9 @@ const express = require('express')
 const messageModel = require('./messageModel')
 const personModel = require('./personModel')
 const dBModule = require('./dBModule');
-const { urlencoded } = require('express');
+const {
+  urlencoded
+} = require('express');
 const app = express();
 const port = 8000;
 const clientDir = __dirname + "\\client\\"
@@ -15,7 +17,9 @@ app.use(express.static(clientDir));
 
 app.get('/', async (req, res) => {
   var post = await messageModel.getAllMessages({});
-      res.render('pages/index.ejs', {posts: post})
+  res.render('pages/index.ejs', {
+    posts: post
+  })
 });
 
 app.get('/carInfo', (req, res) => {
@@ -35,9 +39,9 @@ app.get('/location', (req, res) => {
 });
 
 app.post('/', async function (req, res) {
-  let person = personModel.createPerson(req.body.inputName, 
-    req.body.inputLName, req.body.inputEmail, 
-    req.body.inputAddress, req.body.inputNumber, 
+  let person = personModel.createPerson(req.body.inputName,
+    req.body.inputLName, req.body.inputEmail,
+    req.body.inputAddress, req.body.inputNumber,
     req.body.inputCity, req.body.inputZip)
   await dBModule.store(person)
   console.log('Person saved in database!')
@@ -45,13 +49,15 @@ app.post('/', async function (req, res) {
 });
 
 app.post('/review', async function (req, res) {
- 
+
   let review = messageModel.newMessage(req.body.inputUsername, req.body.inputReview, req.body.star);
   dBModule.store(review);
   console.log('Message saved in database!');
 
   let post = await messageModel.getAllMessages({});
-  res.render('pages/index.ejs', {posts: post});
+  res.render('pages/index.ejs', {
+    posts: post
+  });
 });
 
 app.listen(port, () => {
