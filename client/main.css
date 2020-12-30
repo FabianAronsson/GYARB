@@ -279,3 +279,9 @@ div.stars {
 } 
 
 /*CONTANCT.ejs END*/
+
+/*LOCATION.ejs*/
+
+.openingHours li p{
+    margin-bottom: 0;
+}
