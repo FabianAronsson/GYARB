@@ -13,8 +13,6 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.static(clientDir));
 
-
-
 app.get('/', async (req, res) => {
   var post = await messageModel.getAllMessages({});
   res.render('pages/index.ejs', {
@@ -45,7 +43,9 @@ app.post('/', async function (req, res) {
     req.body.inputCity, req.body.inputZip)
   await dBModule.store(person)
   console.log('Person saved in database!')
-  res.render('pages/index.ejs')
+  res.render('pages/index.ejs', {
+    posts: []
+  })
 });
 
 app.post('/review', async function (req, res) {
