@@ -1,3 +1,3 @@
-# GYARB
+# Exam project for the Technology course
  
-# todo
+# Author: Fabian Aronsson TE18C
