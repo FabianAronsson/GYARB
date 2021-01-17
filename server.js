@@ -2,9 +2,6 @@ const express = require('express')
 const messageModel = require('./messageModel')
 const personModel = require('./personModel')
 const dBModule = require('./dBModule');
-const {
-  urlencoded
-} = require('express');
 const app = express();
 const port = 8000;
 const clientDir = __dirname + "\\client\\"

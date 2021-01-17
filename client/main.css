@@ -282,12 +282,31 @@ label.star2:before {
 
 /*CONTACT.ejs MEDIA QUERIES*/
 @media only screen and (max-width:767px) {
-    /*In order to not break the page when using the facebook plugin.*/
+    /*in order to not break the page when using the facebook plugin.*/
 
     .fb-container {
         display: none;
     }
 }
+
+/*these media queries forces the footer to the bottom of the page for very tall monitors.*/
+@media only screen and (min-width: 1080px) {
+    .wrapperForFooter{
+        min-height: calc(100vh - 32.625rem);
+    }
+    
+    #footerHeight{
+        height: 32.625rem;
+    }
+}
+
+@media only screen and (min-width: 1080px) and (max-width: 1200px) {
+    
+    #footerHeight{
+        height: 35.625rem;
+    }
+}
+
 
 /*CONTANCT.ejs END*/
 
@@ -301,6 +320,13 @@ label.star2:before {
 /*CARINFO.ejs*/
 #hRuler:hover {
     background-color: #fff;
+}
+
+@media only screen and (max-width: 576px) {
+    .tableLeft{
+        margin-left: 0.5rem;
+        margin-right: 0rem;
+    }
 }
 
 /*CARINFO.ejs END*/
