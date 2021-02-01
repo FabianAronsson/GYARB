@@ -322,11 +322,28 @@ label.star2:before {
     background-color: #fff;
 }
 
+/*for small screens*/
 @media only screen and (max-width: 576px) {
     .tableLeft{
         margin-left: 0.5rem;
         margin-right: 0rem;
     }
+    nav{
+        font-size: 1.2rem;
+    }
+    body,html{
+        width: 100%;
+        overflow-x:hidden;
+    }
+    .jumboColor,.containerSize{
+        padding-left: 0.5rem;
+    }
+    .sm-screen{
+        padding-left: 1.5rem;
+    }
+
 }
+
+
 
 /*CARINFO.ejs END*/
