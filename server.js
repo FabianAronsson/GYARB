@@ -48,7 +48,7 @@ app.post('/', async function (req, res) {
 app.post('/review', async function (req, res) {
 
   let review = messageModel.newMessage(req.body.inputUsername, req.body.inputReview, req.body.star);
-  dBModule.store(review);
+  await dBModule.store(review);
   console.log('Message saved in database!');
 
   let post = await messageModel.getAllMessages({});
