@@ -31,13 +31,6 @@ exports.getAllMessages = async () => {
     return allMessages;
 }
 
-exports.getOneMessage = async (message) => {
-    let messages = await Message.findOne({
-        message: message
-    });
-    return messages;
-}
-
 /**The method counts the amount of documents that contain the a specific email. If the email exist, it returns false, as it is not unique. 
  * Because of the nature of countDocuments(), it only look at the "email" part and ignores whether a new message has been posted from the 
  * same email. However, in order to reduce spam and duplicate messages in both the database and on the website, a unique email has to be 

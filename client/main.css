@@ -3,9 +3,14 @@ html {
     scroll-behavior: smooth;
 }
 
+.specificFont{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .jumbotron {
     border-radius: 0;
 }
+
 
 /*General CSS END*/
 
@@ -13,6 +18,7 @@ html {
 nav {
     background: linear-gradient(to right, #00b7ff, #096cad);
     font-size: 1vw;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 nav a {
