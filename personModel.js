@@ -25,8 +25,3 @@ exports.createPerson = (firstName, lastName, email, address, number, city, zipco
 
     return person;
 }
-
-exports.getAllPeople = async () => {
-    let people = await Person.find({});
-    return people;
-}
