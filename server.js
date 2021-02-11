@@ -46,15 +46,23 @@ app.post('/', async function (req, res) {
 });
 
 app.post('/review', async function (req, res) {
+  let isUnique = await messageModel.doesReviewExist(req.body.inputReviewEmail); //check if user exist
 
-  let review = messageModel.newMessage(req.body.inputUsername, req.body.inputReview, req.body.star);
-  await dBModule.store(review);
-  console.log('Message saved in database!');
+  if (isUnique) { //if true then create message
+    let review = messageModel.newMessage(req.body.inputUsername, req.body.inputReview, req.body.star, req.body.inputReviewEmail);
 
-  let post = await messageModel.getAllMessages({});
-  res.render('pages/index.ejs', {
-    posts: post
-  });
+    await dBModule.store(review);
+    console.log('Message saved in database!');
+
+    let post = await messageModel.getAllMessages({});
+    res.render('pages/index.ejs', {
+      posts: post
+    });
+
+  } else { //else, email is a duplicate and the error page is rendered
+    res.render('pages/errorPage.ejs');
+    console.log("A duplicate email has ben detected. Ignoring entry.");
+  }
 });
 
 app.listen(port, () => {
