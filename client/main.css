@@ -61,7 +61,7 @@ nav a {
 
     #link:hover {
         border-radius: 10px;
-        background-color: #07509b;
+        background-color: #0f5faf;
         color: #fff;
     }
 }
@@ -133,6 +133,9 @@ footer {
 
 /*INDEX.ejs*/
 
+.row{
+    margin-right: 0;
+}
 /*Finished reviews*/
 div.stars {
     width: 16.875rem;
@@ -349,7 +352,4 @@ label.star2:before {
     }
 
 }
-
-
-
 /*CARINFO.ejs END*/
